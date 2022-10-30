@@ -24,7 +24,7 @@ export default function ProdutosLista() {
       <Grid templateColumns='repeat(3, 1fr)' gap='10' p='10'>
         {produto != [] ? produto.map((produto) =>
             <GridItem w='100%' h='100%'>
-                <ProdutoCard categoria={produto.categoria} nome ={produto.nome} img={produto.img} preco={produto.preco} nota={produto.nota} qntd={produto.nota_qntd}/>
+                <ProdutoCard categoria={produto.categoria} nome ={produto.nome} img={produto.img} preco={produto.preco} nota={produto.nota} qntd={produto.nota_qntd} marca={produto.marca}/>
             </GridItem>
         ) : console.log('Vazio')}
       </Grid>

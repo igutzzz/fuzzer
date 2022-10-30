@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import { supabase } from "../supabaseClient"
 import ProdutoCard from "./ProdutoCard"
-import { grid, Grid, GridItem} from "@chakra-ui/react"
+import { SimpleGrid, Box } from "@chakra-ui/react"
+import { Link } from 'react-router-dom'
 
 
 export default function ProdutosLista() {
@@ -21,12 +22,14 @@ export default function ProdutosLista() {
     }, [])
   
     return(
-      <Grid templateColumns='repeat(3, 1fr)' gap='10' p='10'>
+      <SimpleGrid minChildWidth='240px' spacing='10' p='10'>
         {produto != [] ? produto.map((produto) =>
-            <GridItem w='100%' h='100%'>
+            <Box w='100%' h='100%'>
+              <Link to={`produto/${produto.id}`}>
                 <ProdutoCard categoria={produto.categoria} nome ={produto.nome} img={produto.img} preco={produto.preco} nota={produto.nota} qntd={produto.nota_qntd} marca={produto.marca}/>
-            </GridItem>
+              </Link>
+            </Box>
         ) : console.log('Vazio')}
-      </Grid>
+      </SimpleGrid>
     )
 }

@@ -22,7 +22,7 @@ export default function ProdutosLista() {
     }, [])
   
     return(
-      <SimpleGrid minChildWidth='240px' spacing='10' p='10'>
+      <SimpleGrid minChildWidth='lg' spacing='10' p='10' ml='10'>
         {produto != [] ? produto.map((produto) =>
             <Box w='100%' h='100%'>
               <Link to={`produto/${produto.id}`}>
